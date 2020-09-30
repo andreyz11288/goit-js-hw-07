@@ -6,9 +6,9 @@ const ingredients = [
   "Зелень",
   "Приправы",
 ];
-let ulList = document.getElementById("ingredients");
+let list = document.getElementById("ingredients");
 const foodIngredients = ingredients.forEach((ingredient) => {
-  let items = document.createElement("li");
-  items.innerHTML = ingredient;
-  ulList.appendChild(items);
+  let item = document.createElement("li");
+  item.innerHTML = ingredient;
+  list.appendChild(item);
 });
