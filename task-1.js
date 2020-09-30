@@ -6,10 +6,15 @@
 
 // Категория: Животные
 // Количество элементов: 4
-const categories = document.querySelectorAll(" #categories li.item");
-const newAr = Array.from(categories);
-console.log(`В списке ${newAr.length} категории.`);
 
-const categories2 = document.querySelectorAll("h2 .textContent");
+const categoriesList = Array.from(
+  document.querySelectorAll("ul#categories li.item ul ")
+);
+console.log(`В списке ${categoriesList.length} категории.`);
 
-console.log(categories2);
+const items = document.querySelectorAll("#categories .item");
+Array.prototype.forEach.call(items, (element) => {
+  const title = element.querySelector("h2").innerHTML;
+  const itemsLength = element.querySelectorAll("li").length;
+  console.log(`Категория: ${title} \n Количество элементов: ${itemsLength}`);
+});
