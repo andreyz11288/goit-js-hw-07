@@ -26,4 +26,3 @@ imgEl.insertAdjacentHTML(
   }, "")
 );
 imgEl.setAttribute("style", "list-style-type:none; display: flex;");
-console.log(imgEl);
