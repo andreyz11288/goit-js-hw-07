@@ -7,9 +7,11 @@ inputEl.addEventListener("blur", eventList);
 function eventList() {
   if (inputEl.value.length >= lengthEl) {
     inputEl.setAttribute("class", "valid");
-    console.log("ok");
+  } else if (inputEl.value === "") {
+    inputEl.setAttribute("class", "");
   } else {
     inputEl.setAttribute("class", "invalid");
-    console.log("fake");
   }
 }
+
+inputEl.style.marginBottom = "15px";
