@@ -1,6 +1,6 @@
 const ref = {
-  counterEl: document.querySelector("#counter"),
-  counterValue: document.querySelector("#value"),
+  counterEl: document.querySelector('#counter'),
+  counterValue: document.querySelector('#value'),
   increment: document.querySelector('[data-action="increment"]'),
   decrement: document.querySelector('[data-action="decrement"]'),
   number: 0,
@@ -22,4 +22,4 @@ ref.decrement.onclick = () => {
 //   number -= 1;
 //   counterValue.innerHTML = number;
 // });
-ref.counterEl.style.marginBottom = "15px";
+ref.counterEl.style.marginBottom = '15px';
