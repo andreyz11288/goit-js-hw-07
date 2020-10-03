@@ -1,3 +1,4 @@
+// Таск 3 - reduce в insertAdjacentHTML читаеться плохо, разбейте код пофункциям
 const images = [
   {
     url:
@@ -16,13 +17,22 @@ const images = [
   },
 ];
 
+// const imgEl = document.querySelector('#gallery');
+// imgEl.insertAdjacentHTML(
+//   'afterbegin',
+//   images.reduce((acc, { url, alt }) => {
+//     acc += `<li><img src="${url}" alt="${alt}" height = 200
+//   /></li>`;
+//     return acc;
+//   }, ''),
+// );
+// imgEl.setAttribute('style', 'list-style-type:none; display: flex;');
+
+const createGallery = ({ url, alt }) =>
+  `<li><img src="${url}" alt="${alt}" height = 200></li>`;
+
+const galleryEl = images.reduce((acc, item) => acc + createGallery(item), '');
+
 const imgEl = document.querySelector('#gallery');
-imgEl.insertAdjacentHTML(
-  'afterbegin',
-  images.reduce((acc, { url, alt }) => {
-    acc += `<li><img src="${url}" alt="${alt}" height = 200
-  /></li>`;
-    return acc;
-  }, ''),
-);
+imgEl.insertAdjacentHTML('afterbegin', galleryEl);
 imgEl.setAttribute('style', 'list-style-type:none; display: flex;');
